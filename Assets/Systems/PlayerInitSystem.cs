@@ -20,6 +20,8 @@ namespace Client {
             var playerGo = Object.Instantiate(_sceneData.playerPrefab, _sceneData.playerSpawnPoint.position, Quaternion.identity);
             player.PlayerRigidbody = playerGo.GetComponent<Rigidbody>();
             player.PlayerSpeed = _sceneData.playerSpeed;
+            player.PlayerTransform = _sceneData.PlayerTransform;
+            player.PlayerTransform = playerGo.transform;
         }
     }
 }

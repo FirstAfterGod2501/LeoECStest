@@ -1,3 +1,4 @@
+using System;
 using Leopotam.Ecs;
 using UnityEngine;
 using Utils;
@@ -18,7 +19,11 @@ namespace Client
             {
                 ref var player = ref _filter.Get1(i);
                 var currentPos = _sceneData.mainCamera.transform.position;
-                currentPos = Vector3.SmoothDamp(currentPos,_sceneData.followOffset, ref _currentVelocity, _sceneData.smoothTime);
+                //player.PlayerTransform.position;
+                var position = player.PlayerTransform.position;
+                Debug.Log(position);
+                currentPos = Vector3.SmoothDamp(currentPos, position + _sceneData.followOffset,
+                    ref _currentVelocity, _sceneData.smoothTime);
                 _sceneData.mainCamera.transform.position = currentPos;
             }
         }

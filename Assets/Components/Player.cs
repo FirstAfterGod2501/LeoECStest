@@ -6,5 +6,7 @@ namespace Client {
         public Rigidbody PlayerRigidbody;
         
         public float PlayerSpeed;
+
+        public Transform PlayerTransform;
     }
 }

@@ -12,7 +12,6 @@ namespace Client
             foreach (var i in _filter)
             {
                 ref var input = ref _filter.Get1(i);
-
                 input.MoveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")); // заполняем данные
             }
         }

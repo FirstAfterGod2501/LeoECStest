@@ -45,13 +45,19 @@
     <Analyzer Include="D:\GameDev\Editor\2022.3.4f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Components\MapCell.cs" />
      <Compile Include="Assets\Components\Player.cs" />
      <Compile Include="Assets\Scenes\EcsStartup.cs" />
      <Compile Include="Assets\Systems\PlayerInputSystem.cs" />
      <Compile Include="Assets\Components\PlayerInputData.cs" />
+     <Compile Include="Assets\Systems\DestroyMapSystem.cs" />
+     <Compile Include="Assets\Systems\GenerateMapSystem.cs" />
+     <Compile Include="Assets\Components\Map.cs" />
+     <Compile Include="Assets\Systems\PlatfrormSpawnSystem.cs" />
      <Compile Include="Assets\Systems\PlayerInitSystem.cs" />
      <Compile Include="Assets\Systems\CameraFollowSystem.cs" />
      <Compile Include="Assets\Utils\SceneData.cs" />
+     <Compile Include="Assets\Systems\PlatformSpawnInitSystem.cs" />
      <Compile Include="Assets\Systems\PlayerMoveSystem.cs" />
      <Folder Include="Assets" />
      <None Include="Library\PackageCache\com.unity.settings-manager@2.0.1\package.json" />
@@ -80,6 +86,7 @@
      <Folder Include="Library\PackageCache\com.unity.modules.assetbundle@1.0.0" />
      <None Include="Library\PackageCache\com.unity.timeline@1.7.4\package.json" />
      <Folder Include="Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom" />
+     <Folder Include="Assets\Scenes\SampleScene" />
      <Folder Include="Library\PackageCache\com.unity.visualscripting@1.8.0" />
      <None Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.18\ValidationConfig.json" />
      <Folder Include="Library\PackageCache\com.unity.ext.nunit@1.0.6\net35" />
@@ -839,13 +846,13 @@
       <Project>{d208fec6-4b64-41b7-5d8e-8d330825f3ad}</Project>
       <Name>Unity.TestTools.CodeCoverage.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj">
-      <Project>{1edfed19-d014-4339-fb96-01c483c2cc18}</Project>
-      <Name>Unity.TestTools.CodeCoverage.Editor.OpenCover.Model</Name>
-    </ProjectReference>
     <ProjectReference Include="Leopotam.Ecs.UnityIntegration.csproj">
       <Project>{ee374b49-bf08-b870-7f72-693b2297266d}</Project>
       <Name>Leopotam.Ecs.UnityIntegration</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj">
+      <Project>{1edfed19-d014-4339-fb96-01c483c2cc18}</Project>
+      <Name>Unity.TestTools.CodeCoverage.Editor.OpenCover.Model</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
       <Project>{6438c810-93a5-37f1-4aed-2923b73fd1e1}</Project>

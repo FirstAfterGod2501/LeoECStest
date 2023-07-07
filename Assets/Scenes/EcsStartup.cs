@@ -11,7 +11,7 @@ namespace Client {
         
         private EcsSystems _updateSystems;
         
-        private EcsSystems _fixedUpdateSystems; // новая группа систем
+        private EcsSystems _fixedUpdateSystems;
 
         private void Start()
         {
@@ -22,12 +22,17 @@ namespace Client {
             _updateSystems
                 .Add(new PlayerInitSystem())
                 .Add(new PlayerInputSystem())
+                .Add(new PlatfromInitSystem())
                 .Inject(sceneData);
 
-            _fixedUpdateSystems.Add(new PlayerMoveSystem()); // добавляем систему движения
-            _fixedUpdateSystems.Add(new CameraFollowSystem()).Inject(sceneData);
+            _fixedUpdateSystems
+                .Add(new PlayerMoveSystem())
+                .Add(new CameraFollowSystem())
+                .Add(new PlatformSpawnSystem())
+                .Add(new DestroyMapSystem())
+                .Add(new GenerateMapSystem())
+                .Inject(sceneData);
       
-            // Инициализируем группы систем
             _updateSystems.Init();
             _fixedUpdateSystems.Init();
         }
@@ -39,7 +44,7 @@ namespace Client {
 
         private void FixedUpdate()
         {
-            _fixedUpdateSystems?.Run(); // запускаем их каждый тик FixedUpdate()
+            _fixedUpdateSystems?.Run();
         }
 
         private void OnDestroy()
